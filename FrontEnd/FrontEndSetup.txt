@@ -1,0 +1,6 @@
+to set up frontend:
+1. https://nodejs.org/en
+download this. I am using version 20.11.1
+you need above version 16
+2. "npm create vite@latest"
+Choose project name, keep the package the same, select react, and typescript

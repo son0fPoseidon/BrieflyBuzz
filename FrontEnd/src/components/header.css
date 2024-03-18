@@ -1,0 +1,31 @@
+/* src/components/Header.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .header .appName {
+    font-size: 1.5rem;
+  }
+  
+  .header select,
+  .header button {
+    padding: 0.5rem;
+    margin-left: 1rem;
+    background-color: white;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+  }
+  
+  .header button:hover {
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+  }
+  

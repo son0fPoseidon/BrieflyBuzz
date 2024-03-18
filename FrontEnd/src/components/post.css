@@ -1,0 +1,26 @@
+/* src/components/Post.css */
+
+.post {
+    margin: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    justify-content: center;
+  }
+  
+  .post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .post-text {
+    margin: 20px 0;
+  }
+  
+  .post-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
