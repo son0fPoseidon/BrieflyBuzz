@@ -1,0 +1,11 @@
+.appContainer {
+    background-color: #bdbdbd; /* Example: A light gray background */
+    min-height: 100vh; /* Ensure it fills at least the whole viewport height */
+    padding: 0;
+    margin: 0;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;  
+  }
