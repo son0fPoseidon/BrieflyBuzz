@@ -1,0 +1,46 @@
+.searchBar{
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    font-family: 'Poppins';
+
+}
+
+.searchBar_input{
+    flex-grow: 5;
+    height: 40px;
+    padding: 10px;
+    font-size: 1.8rem;
+    color: #4596cc;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 5px #bdd5ea solid;
+    transition: all 0.4s;
+}
+
+.searchBar_input::placeholder{
+    font-family: 'Poppins';
+    color: #bdd5ea;
+}
+
+input:focus{
+    outline: none;
+    border: 6px #4596cc solid;
+}
+
+.searchBar_button{
+    width: 10%;
+    cursor: pointer;
+    border: 5px solid #4596cc;
+    background-color: white;
+    border-radius: 10px;
+    color: #4596cc;
+    font-size: 1.4rem;
+    font-weight: 1000;
+    transition: all 0.4s ease-in-out;
+}
+
+.searchBar_button:hover{
+    background-color: #4596cc;
+    color: #fff;
+}
