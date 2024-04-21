@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios'; // Import axios for making HTTP requests
 import "./ArticleFormat.css";
 import appLogo from "../appLogo.png";
+import { nyt } from "../axios";
+import { nytKey } from "../API_KEY";
 
 const ArticleFormat = ({ fetchUrl, setArticle }) => {
   const [userArticles, setUserArticles] = useState([]);
@@ -10,14 +12,17 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
     async function fetchData() {
       try {
         // Fetch data from the server endpoint
-        const response = await axios.get(fetchUrl);
-        setUserArticles(response.data);
+        fetchUrl = fetchUrl + "?api-key=" + nytKey;
+        console.log(fetchUrl)
+        const response = await nyt.mostPopular.get(fetchUrl);
+        console.log(response.data)
+        setUserArticles(response.data.results);
       } catch (error) {
         console.log(error.message);
       }
     }
     fetchData();
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }, [fetchUrl]);
 
   let art = fetchUrl.split("/")[1];

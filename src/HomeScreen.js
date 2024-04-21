@@ -34,6 +34,20 @@ const HomeScreen = () => {
           fetchUrl={requests.fetchTopHeadlinesUS}
         />
       </div>
+
+      <div style={{ marginTop: '60px' }}>
+        <TopNewsRow
+          title={'Top Headlines: Netherlands'}
+          fetchUrl={requests.fetchTopHeadlinesDutch}
+        />
+      </div>
+
+      <div style={{ marginTop: '60px' }}>
+        <TopNewsRow
+          title={'Top Headlines: Korea'}
+          fetchUrl={requests.fetchTopHeadlinesKorea}
+        />
+      </div>
       {/* <div style={{ display: "flex", justifyContent: 'space-around', marginTop: '40px' }}
       >
         <ArticleSideButtons article={articleHeadline} setArticle={setArticleHeadline} />

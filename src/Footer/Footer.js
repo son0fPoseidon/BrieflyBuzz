@@ -37,8 +37,7 @@ const Footer = () => {
         ></path>
       </svg> */}
       <div className="footer_baseFooter">
-        <span className="footer_baseFooter_copyRight">Copyright &copy; 2021. All rights reserved. For reprint rights: News Express Services</span>        
-        <span>Made With &#128153; by BrieflyBuzz</span>
+        <span className="footer_baseFooter_copyRight">Copyright &copy; 2024 by BrieflyBuzz. All rights reserved. For reprint rights: News Express Services</span>
       </div>
     </div>
   );
