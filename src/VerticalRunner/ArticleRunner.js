@@ -10,7 +10,8 @@ const ArticleRunner = ({ fetchUrl = 'world', width = '600px', title }) => {
   let [topNews, setTopNews] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const request = await nyt.topstories.get(fetchUrl + '.json?api-key=' + nytKey);
+
+      const request = await nyt.topstories.get(fetchUrl + '.json?api-key=' + (process.env.REACT_APP_NYT_KEY || nytKey));
       // console.log(fetchUrl + '.json?api-key=' + nytKey)
       setTopNews(request.data.results.slice(0, 15));
       return request;
@@ -69,7 +70,7 @@ const ArticleRunner = ({ fetchUrl = 'world', width = '600px', title }) => {
             }
             return (
 
-              <a key={key} href={obj.url} target="_blank" rel="noreferrer"  className="verticalRunner">
+              <a key={key} href={obj.url} target="_blank" rel="noreferrer" className="verticalRunner">
                 <div className="verticalRunner_image">
                   <img src={image} alt="" height='240px' />
                 </div>

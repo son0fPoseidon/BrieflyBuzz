@@ -1,9 +1,9 @@
 import React from 'react';
 import './SideButtons.css';
 import { topDetails } from '../data';
-import API_KEY from '../API_KEY';
 
 const SideButtons = ({ headline, setHeadline }) => {
+
   return (
     <div className='sideButtons'>
       <span>
@@ -14,17 +14,16 @@ const SideButtons = ({ headline, setHeadline }) => {
           {topDetails.map((obj, key) => {
             return (
               <div
-              key={key}
+                key={key}
                 className={`sideButttons_btn 
-                        ${
-                          obj.title === headline[1]
-                            ? 'btnActive'
-                            : 'notActiveBtn'
-                        }
+                        ${obj.title === headline[1]
+                    ? 'btnActive'
+                    : 'notActiveBtn'
+                  }
                         `}
                 onClick={() => {
                   setHeadline([
-                    `top-headlines?${obj.genre}=${obj.value}&apiKey=${API_KEY}`,
+                    `top-headlines?${obj.genre}=${obj.value}&apiKey=${process.env.REACT_APP_API_KEY || API_KEY}`,
                     obj.title,
                   ]);
                 }}

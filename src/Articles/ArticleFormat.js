@@ -11,11 +11,10 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        // Fetch data from the server endpoint
-        fetchUrl = fetchUrl + "?api-key=" + nytKey;
-        console.log(fetchUrl)
+        // Fetch data from the server endpoint        
+        fetchUrl = fetchUrl + "?api-key=" + (process.env.REACT_APP_NYT_KEY || nytKey);
         const response = await nyt.mostPopular.get(fetchUrl);
-        console.log(response.data)
+        // console.log(response.data)
         setUserArticles(response.data.results);
       } catch (error) {
         console.log(error.message);

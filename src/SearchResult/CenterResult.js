@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axios from "../axios";
 import "./CenterResult.css";
 import appLogo from "../appLogo.png";
 
 // import { dummyData } from "../data";
 import { useParams } from "react-router-dom";
+import instance, { baseURL } from "../axios";
 
 const CenterResult = ({ fetchUrl, type }) => {
   const [news, setNews] = useState([]);
@@ -22,16 +22,29 @@ const CenterResult = ({ fetchUrl, type }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const request = await axios.get(fetchUrl);
+        console.log(fetchUrl)
+        // fetchUrl = "top-headlines?sources=bbc-news&pageSize=40&apiKey=7be17ba3597f4fba90771573ccd8f601"
+        const src = fetchUrl.split("?")
+        const params_arr = src[1].split("&")
+        const params_submit = Object()
+        params_arr.forEach((item) => {
+          const arr = item.split("=")
+          params_submit[arr[0]] = arr[1]
+        })
+
+        // console.log(src[0], params_submit)
+        const uri = baseURL + src[0]
+        // console.log(uri)
+        const request = await instance.get(uri, { params: params_submit });
         if (type === "sources") setNews(request.data.sources);
         else setNews(request.data.articles);
-        // console.log(request);
+        console.log(request);
       } catch (error) {
         console.log(error.message);
       }
     }
     fetchData();
-  });
+  }, [fetchUrl]);
 
   return (
     <div className={`centerResult`}>

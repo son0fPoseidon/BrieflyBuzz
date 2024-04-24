@@ -17,10 +17,19 @@ const HomeScreen = () => {
     <>
       <Nav />
       <Banner />
+
       <TopNewsRow
-        title={"Top Headlines: India"}
-        fetchUrl={requests.fetchTopHeadlinesIndia}
+        title={'Top Headlines: United States'}
+        fetchUrl={requests.fetchTopHeadlinesUS}
       />
+
+      <div style={{ marginTop: '60px' }}>
+        <TopNewsRow
+          title={"Top Headlines: India"}
+          fetchUrl={requests.fetchTopHeadlinesIndia}
+        />
+      </div>
+
       <div style={{ display: "flex", justifyContent: 'space-around', marginTop: '40px' }}>
         {/* <VerticalRunner
           fetchUrl={customHeadlines[0]}
@@ -28,12 +37,7 @@ const HomeScreen = () => {
         /> */}
         {/* <SideButtons headline={customHeadlines} setHeadline={setCustomHeadlines} /> */}
       </div>
-      <div style={{ marginTop: '60px' }}>
-        <TopNewsRow
-          title={'Top Headlines: United States'}
-          fetchUrl={requests.fetchTopHeadlinesUS}
-        />
-      </div>
+
 
       <div style={{ marginTop: '60px' }}>
         <TopNewsRow
@@ -48,6 +52,8 @@ const HomeScreen = () => {
           fetchUrl={requests.fetchTopHeadlinesKorea}
         />
       </div>
+
+
       {/* <div style={{ display: "flex", justifyContent: 'space-around', marginTop: '40px' }}
       >
         <ArticleSideButtons article={articleHeadline} setArticle={setArticleHeadline} />

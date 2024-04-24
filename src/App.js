@@ -7,6 +7,7 @@ import SearchResult from "./SearchResult/SearchResult";
 import Articles from "./Articles/Articles";
 
 function App() {
+
   return (
     <Router>
       <div className="App">

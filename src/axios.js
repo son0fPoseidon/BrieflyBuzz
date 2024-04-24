@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const baseURL = "https://brieflybuzz-server-7be20bd602e1.herokuapp.com/"
+
 const instance = axios.create({
-    baseURL: "https://newsapi.org/v2"
+    baseURL: "https://brieflybuzz-server-7be20bd602e1.herokuapp.com"
 })
 
 const nyt = {
@@ -13,4 +15,5 @@ const nyt = {
     }),
 }
 export default instance;
+export { baseURL };
 export { nyt };

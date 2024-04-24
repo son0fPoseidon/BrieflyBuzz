@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./TopNewsRow.css";
-import axios from "../axios";
+import instance, { baseURL } from "../axios";
 
 const TopNewsRow = ({ title, fetchUrl }) => {
   const [topNews, setTopNews] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(fetchUrl);
+      // console.log(baseURL)
+      const request = await instance.get(baseURL + 'top-headlines', { params: fetchUrl });
+      // console.log("Updated request", request.data)
       setTopNews(request.data.articles);
       return request;
     }
@@ -21,10 +23,10 @@ const TopNewsRow = ({ title, fetchUrl }) => {
 
   // console.log(topNews);
   return (
-    <div className="topNewsRow">
+    (<div className="topNewsRow">
       <h1 className="topNewsRow_title">{title}</h1>
       <div className="topNewsRow_posters">
-        {topNews.map((news, key) => {
+        {topNews && topNews.map((news, key) => {
           if (news.urlToImage) {
             return (
               <a key={key} className="topNewsRow_card" href={news.url} target="_blank" rel="noreferrer">
@@ -50,7 +52,7 @@ const TopNewsRow = ({ title, fetchUrl }) => {
           return null;
         })}
       </div>
-    </div>
+    </div>)
   );
 };
 
