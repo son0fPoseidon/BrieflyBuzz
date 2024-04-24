@@ -1,0 +1,11 @@
+1. Need Node version 16+. You can get this at nodejs.org 
+2. In the terminal, run "npm create vite@latest" you can change latest to whatever version you want, I am using 4.1.0
+    a. It will ask for a project name
+    b. Select the React framework
+    c. Then you run the following commands
+        1. cd react-app
+        2. npm install
+3. Now you can run "npm run dev" which will give you the local version
+
+Any questions feel free to ask Aiden!
+    
