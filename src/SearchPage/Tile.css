@@ -1,0 +1,71 @@
+.tile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 22%; 
+
+    height: 200px;    
+    padding: 5px;
+    text-align: center;
+    font-weight: 1000;
+    border-radius: 30px;
+    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
+
+}
+
+.tile:hover{
+    box-shadow: 0px 10px 20px rgba(150,170,180,0.5);;
+}
+
+.tile_title, .tile_icon{
+    font-size: 2rem;
+}
+
+.tile_description{
+    font-size: 1.5rem;
+}
+
+.type1{
+    color: #345065;
+    border: 5px solid #345065;
+    transition: all 0.3s ease-in;
+}
+
+.type1:hover{
+    background-color: #345065;
+    color: #fff;
+}
+
+.type2{
+    color: #fff;
+    background-color: #00DEF2;
+    transition: all 0.3s ease-in;
+}
+
+.type2:hover{
+    background-color: #fff;
+    color: #00DEF2;
+}
+
+.type3{
+    color: #345065;
+    background-color: #ABCDCF;
+    transition: all 0.3s ease-in;
+}
+
+.type3:hover{
+    color: #ABCDCF;
+    background-color: #345065;
+}
+
+.type4{
+    background-color: #2B5C82;
+    color: #12C0C9;
+    transition: all 0.3s ease-in;
+
+}
+
+.type4:hover{
+    background-color: #ABCDCF;
+    color: #2B5C82;
+}

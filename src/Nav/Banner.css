@@ -1,0 +1,13 @@
+.banner {
+  height: 750px;
+  font-family: "Poppins", sans-serif;
+}
+
+.banner_TypeWriter {
+  position: absolute;
+  left: 140px;
+  top: 170px;
+  font-weight: 1000;
+  font-size: 5rem;
+  /* font-family: "Open Sans", sans-serif; */
+}
